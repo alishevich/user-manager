@@ -24,25 +24,25 @@ public class UserAccount {
     private Integer id;
 
     @Column(name = "user_name")
-    @Pattern(regexp = "[a-zA-Z]", message = "Username must contain only Latin characters")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "Username must contain only Latin characters")
     @Size(min = 3, max = 16, message = "Username must be between 3 and 16 characters long")
     @NotBlank
     private String userName;
 
     @Column(name = "password")
-    @Pattern(regexp = "[a-zA-Z0-9]", message = "Password must contain only Latin characters and numbers")
-    @Size(min = 3, max = 16)
+    @Pattern(regexp = "^[a-zA-Z0-9]+$", message = "Password must contain only Latin characters and numbers")
+    @Size(min = 1, max = 16)
     @NotBlank
     private String password;
 
     @Column(name = "first_name")
-    @Pattern(regexp = "[a-zA-Z]", message = "Firstname must contain only Latin characters")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "Firstname must contain only Latin characters")
     @Size(min = 1, max = 16,message = "Firstname must be between 1 and 16 characters long")
     @NotBlank
     private String firstName;
 
     @Column(name = "last_name")
-    @Pattern(regexp = "[a-zA-Z]", message = "Lastname must contain only Latin characters")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "Lastname must contain only Latin characters")
     @Size(min = 1, max = 16, message = "Lastname must be between 1 and 16 characters long")
     @NotBlank
     private String lastName;
@@ -56,7 +56,7 @@ public class UserAccount {
     private Status status;
 
     @Column(name = "created_at", columnDefinition = "timestamp default now()")
-    @NotNull
+    //@NotNull
     private Date createdAt = new Date();
 
 
