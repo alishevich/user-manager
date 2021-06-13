@@ -6,7 +6,7 @@ RUN ./gradlew build
 
 FROM adoptopenjdk:11-hotspot
 
-COPY --from=GRADLE_BUILD build/*.jar app.jar
+COPY --from=GRADLE_BUILD /home/gradle/build/libs/*.jar app.jar
 
 EXPOSE 8080
 
