@@ -23,4 +23,12 @@ Built-in profiles:
 Admin  admin : admin
 User   user  : user
 ```
+## API
 
+List of restaurants: GET/user
+
+User info: GET/user/{id}
+
+Create new user: POST/user/new
+
+Edit users: POST/user/{id}/edit
