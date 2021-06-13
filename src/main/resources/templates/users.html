@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="">
 <head>
     <meta charset="UTF-8">
     <title>Список пользователей</title>
@@ -28,6 +28,10 @@
     </tbody>
 </table>
 <br>
-<p><a href="/user/new">Добавить</a></p>
+<p><a href="/login">Выйти</a></p>
+<br>
+<div th:if="${#request.isUserInRole('ADMIN')}">
+    <p><a href="/user/new">Добавить</a></p>
+</div>
 </body>
 </html>
