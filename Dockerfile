@@ -2,7 +2,7 @@ FROM gradle:6.9-jdk11-hotspot AS GRADLE_BUILD
 
 COPY ./ ./
 
-RUN ./gradlew build
+RUN ./gradlew build -x test
 
 FROM adoptopenjdk:11-hotspot
 

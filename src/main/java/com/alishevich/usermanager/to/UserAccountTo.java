@@ -19,22 +19,22 @@ public class UserAccountTo {
 
     @Pattern(regexp = "^[a-zA-Z]+$", message = "Username must contain only Latin characters")
     @Size(min = 3, max = 16, message = "Username must be between 3 and 16 characters long")
-    @NotBlank
+    @NotBlank(message = "Username must not be empty")
     private String userName;
 
     @Pattern(regexp = "^[a-zA-Z0-9]+$", message = "Password must contain only Latin characters and numbers")
-    @Size(min = 1, max = 16)
-    @NotBlank
+    @Size(min = 1, max = 16, message = "Password must be between 1 and 16 characters long")
+    @NotBlank(message = "Password must not be empty")
     private String password;
 
     @Pattern(regexp = "^[a-zA-Z]+$", message = "Firstname must contain only Latin characters")
     @Size(min = 1, max = 16,message = "Firstname must be between 1 and 16 characters long")
-    @NotBlank
+    @NotBlank(message = "Firstname must not be empty")
     private String firstName;
 
     @Pattern(regexp = "^[a-zA-Z]+$", message = "Lastname must contain only Latin characters")
     @Size(min = 1, max = 16, message = "Lastname must be between 1 and 16 characters long")
-    @NotBlank
+    @NotBlank(message = "Lastname must not be empty")
     private String lastName;
 
     private Role role;
